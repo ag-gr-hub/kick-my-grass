@@ -109,32 +109,48 @@
       
       const images = [
         {
-          url: '../images/lawn-mowing.jpeg',
+          url: '/images/quote.jpg',
           elem: 'img1',
         },
         {
-          url: '../images/pexels-stitch-24595771.jpg',
+          url: '/images/appointment.jpg',
           elem: 'img2',
         },
         {
-          url: '../images/replant.jpg',
+          url: '/images/reliable.jpg',
           elem: 'img3',
         },
         {
-          url: '../images/quote.jpg',
+          url: '/images/lawn-mowing.jpeg',
           elem: 'img4',
         },
         {
-          url: '../images/appointment.jpg',
+          url: '/images/pexels-stitch-24595771.jpg',
           elem: 'img5',
         },
         {
-          url: '../images/reliable.jpg',
+          url: '/images/replant.jpg',
           elem: 'img6',
         },
         {
-          url: '../images/fallen-tree.jpg',
+          url: '/images/chainsaw.jpeg',
           elem: 'img7',
+        },
+        {
+          url: '/images/trash.jpeg',
+          elem: 'img8',
+        },
+        {
+          url: '/images/powerwash.jpeg',
+          elem: 'img9',
+        },
+        {
+          url: '/images/handyman.webp',
+          elem: 'img10',
+        },
+        {
+          url: '/images/moving.webp',
+          elem: 'img11',
         },
       ];
       const preloadImage = (src, index) =>

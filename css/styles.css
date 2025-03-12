@@ -368,6 +368,33 @@ main .masthead {
   transform: translate(0, -11px) rotate(45deg);
 }
 
+.appointmentFormArea {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  align-content: center;
+  grid-template-areas:
+    "headerArea headerArea headerArea"
+    ". contactFormArea .";
+}
+
+.headerArea { 
+  grid-area: headerArea;
+  text-align: center;
+}
+
+.contactFormArea { 
+  grid-area: contactFormArea; 
+}
+
+.actionBtnsArea {
+  margin: 5px;
+  text-align: center;
+}
+
+
 /* ******************
  1110 Media Query
 ****************** */

@@ -141,16 +141,14 @@ footer > div {
 }
 
 .logo {
-  background-color: black;
   display: flex;
-  width: 150px;
-  border-radius: 50%;
-  height: 150px;
+  width: 100px;
+  height: 75px;
 }
 
 .logo img {
-  height: 150px;
-  width: 150px;  
+  height: 100px;
+  padding: auto;
 }
 
 nav {

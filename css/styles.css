@@ -199,10 +199,10 @@ main .masthead {
   background: transparent
     url('../images/kick-my-grass_LE_upscale_balanced_x4.jpg')
     no-repeat 50% fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: cover cover;
+  -moz-background-size: cover cover;
+  -o-background-size: cover cover;
+  background-size: cover cover;
 }
 
 .lato-light {

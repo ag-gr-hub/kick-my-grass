@@ -141,16 +141,16 @@ footer > div {
 }
 
 .logo {
-  background-color: var(--white);
+  background-color: black;
   display: flex;
-  width: 100px;
-  height: 50px;
+  width: 150px;
   border-radius: 50%;
+  height: 150px;
 }
 
-.logo span {
-  margin: auto;
-  font: bold 14px sans-serif;
+.logo img {
+  height: 150px;
+  width: 150px;  
 }
 
 nav {
@@ -197,9 +197,9 @@ main {
 }
 
 main .masthead {
-  height: 450px;
+  height: 650px;
   background: transparent
-    url('../images/mowing.jpeg')
+    url('../images/kick-my-grass_LE_upscale_balanced_x4.jpg')
     no-repeat 50% fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;

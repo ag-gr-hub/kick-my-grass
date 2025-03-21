@@ -45,6 +45,11 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
             crossorigin="anonymous">
         </script>
+        <script
+            src="./scripts/contact.js"
+        >
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     </head>
     <body>
         <header>
@@ -109,42 +114,57 @@
                   </p>
                   <div class="appointmentFormArea">
                     <div class="headerArea lato-regular">
-                        <h3>Get an Appointment</h3>
+                      <h3>Get an Appointment</h3>
                     </div>
                     <div class="contactFormArea">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Name">
-                            <label for="floatingInput">Name</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="tel" class="form-control" id="floatingInput" placeholder="Phone Number">
-                            <label for="floatingInput">Phone Number</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Email Address</label>
-                        </div>
-                        
-                        <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a description here" id="floatingTextarea2" style="height: 100px"></textarea>
-                            <label for="floatingTextarea2">Description</label>
-                        </div>
-                        <div class="actionBtnsArea">
-                            <button type="button" class="btn btn-danger" style="margin: 10px">
-                                <i class="fa-solid fa-times"></i>
-                                Clear
-                            </button>
-                            <button type="button" class="btn btn-success" style="margin: 10px">
-                                <i class="fa-solid fa-check"></i>
-                                Submit
-                            </button>
-                        </div>
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="nameInput" placeholder="Name">
+                        <label for="nameInput">Name</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input type="tel" class="form-control" id="phoneInput" placeholder="Phone Number">
+                        <label for="phoneInput">Phone Number</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                        <label for="emailInput">Email Address</label>
+                      </div>
+                      <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a description here" id="descriptionInput" style="height: 100px"></textarea>
+                        <label for="descriptionInput">Description</label>
+                      </div>
+                      <div class="actionBtnsArea">
+                        <button type="button" class="btn btn-danger" style="margin: 10px" onclick="clearForm()">
+                          <i class="fa-solid fa-times"></i> Clear
+                        </button>
+                        <button type="button" class="btn btn-success" style="margin: 10px" onclick="sendEmail()">
+                          <i class="fa-solid fa-check"></i> Submit
+                        </button>
+                      </div>
                     </div>
-                </div>
-    
+                  </div>            
                </div>
             </main>
          </div>
+
+         <!-- Modal -->
+        <div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="thankyouModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Thank you!</h1>
+                    </div>
+                    <div class="modal-body">
+                        Thank you for submitting your information! We appreciate your business and will be in touch with you soon.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="onCloseModal()">
+                            <i class="fa-solid fa-check"></i> Ok
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Footer -->
         <footer onclick="forceClickMenu()">

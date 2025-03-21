@@ -544,7 +544,7 @@ main .masthead {
 
 @media screen and (max-width: 500px) {
   main .masthead {
-    height: 650px;
+    height: 350px;
     background: transparent
       url('../images/kick-my-grass_LE_upscale_balanced_x4.jpg')
       no-repeat center center;

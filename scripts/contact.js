@@ -4,6 +4,11 @@ function validateForm() {
     const name = document.getElementById('nameInput').value;
     const phone = document.getElementById('phoneInput').value;
     const email = document.getElementById('emailInput').value;
+    const street = document.getElementById('streetInput').value;
+    const aptUnit = document.getElementById('aptUnitInput').value;
+    const city = document.getElementById('cityInput').value;
+    const state = document.getElementById('stateInput').value;  // Readonly, but included in validation for completeness
+    const postalCode = document.getElementById('postalInput').value;
     const description = document.getElementById('descriptionInput').value;
   
     // Validate name (optional check, ensure it's not empty)
@@ -26,6 +31,37 @@ function validateForm() {
       return false;
     }
   
+    // Validate street address (required)
+    if (!street) {
+      alert("Please enter your street address.");
+      return false;
+    }
+  
+    // Validate apt/unit (optional check, can be left empty)
+    if (aptUnit && aptUnit.trim() === "") {
+      alert("Please enter your apartment/unit if applicable.");
+      return false;
+    }
+  
+    // Validate city (required)
+    if (!city) {
+      alert("Please enter your city.");
+      return false;
+    }
+  
+    // Validate state (already set to Florida, but still validating as it's included)
+    if (!state) {
+      alert("Please select your state.");
+      return false;
+    }
+  
+    // Validate postal code (required)
+    const postalCodeRegex = /^[0-9]{5}$/;  // Adjust to match the format of postal codes in your region
+    if (!postalCode.match(postalCodeRegex)) {
+      alert("Please enter a valid postal code.");
+      return false;
+    }
+  
     // Validate description (optional check, ensure it's not empty)
     if (!description) {
       alert("Please enter a description of the required services.");
@@ -34,15 +70,21 @@ function validateForm() {
   
     return true; // Proceed with email sending if validation is successful
   }
+  
 
 function sendEmail() {
     if (!validateForm()) {
         return; // Stop if validation fails
       }
-    const name = document.getElementById('nameInput').value;
-    const phone = document.getElementById('phoneInput').value;
-    const email = document.getElementById('emailInput').value;
-    const description = document.getElementById('descriptionInput').value;
+      const name = document.getElementById('nameInput').value;
+      const phone = document.getElementById('phoneInput').value;
+      const email = document.getElementById('emailInput').value;
+      const street = document.getElementById('streetInput').value;
+      const aptUnit = document.getElementById('aptUnitInput').value;
+      const city = document.getElementById('cityInput').value;
+      const state = document.getElementById('stateInput').value;  // Readonly, but included in validation for completeness
+      const postalCode = document.getElementById('postalInput').value;
+      const description = document.getElementById('descriptionInput').value;
   
     if (!name || !phone || !email || !description) {
       alert("Please fill out all fields before submitting.");
@@ -53,6 +95,11 @@ function sendEmail() {
       name: name,
       phone: phone,
       email: email,
+      street: street,
+      aptUnit: aptUnit,
+      city:city,
+      state: state,
+      postalCode: postalCode,
       description: description,
       title: `${name}`
     }, "pK-dV5SF43WH7XAtK")
@@ -69,10 +116,15 @@ function sendEmail() {
 
 
   function clearForm() {
-    document.getElementById('nameInput').value = "";
-    document.getElementById('phoneInput').value = "";
-    document.getElementById('emailInput').value = "";
-    document.getElementById('descriptionInput').value = "";
+    document.getElementById('nameInput').value = '';
+    document.getElementById('phoneInput').value = '';
+    document.getElementById('emailInput').value = '';
+    document.getElementById('streetInput').value = '';
+    document.getElementById('aptUnitInput').value = '';
+    document.getElementById('cityInput').value = '';
+    document.getElementById('stateInput').value;
+    document.getElementById('postalInput').value = '';
+    document.getElementById('descriptionInput').value = '';
   }
 
   function onCloseModal() {

@@ -547,10 +547,8 @@ main .masthead {
     height: 650px;
     background: transparent
       url('../images/kick-my-grass_LE_upscale_balanced_x4.jpg')
-      no-repeat 100% fixed;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
+      no-repeat center center;
+    background-attachment: scroll;
     background-size: contain;
   }
 
